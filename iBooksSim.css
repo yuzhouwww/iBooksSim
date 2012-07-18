@@ -1,0 +1,65 @@
+body {
+    position: absolute;
+    margin: 0;
+    width: 1024px;
+    height: 748px;
+    overflow: hidden;
+}
+
+#chapterScroll {
+    background-color: #add8e6;
+    position: absolute;
+    width: 1024px;
+    height: 748px;
+    overflow: hidden;
+}
+
+#chapterScrollContent {
+    -webkit-transform: translate3d(0,0,0);
+}
+
+#hhh {
+    background: #20b2aa;
+    position: absolute;
+    width: 500px;
+    height: 100px;
+}
+
+.chapter {
+    background-color: white;
+    background-image: url(background.jpeg);
+    background-size: cover;
+    position: absolute;
+    width: 1024px;
+    height: 748px;
+    /*box-shadow: 0 0 5px black inset;*/
+    font-size: 30px;
+}
+
+#pageScroll {
+    /*background-color: #f08080;*/
+    position: absolute;
+    top: 568px;
+    width: 1024px;
+    height: 180px;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    display: block;
+}
+
+#pageScrollContent {
+    width: 5400px;
+    -webkit-transform: translate3d(0,0,0);
+}
+
+.page {
+    background-color: gray;
+    background-image: url(background.jpeg);
+    background-size: cover;
+    position: absolute;
+    width: 200px;
+    height: 180px;
+    /*box-shadow: 0 0 5px black inset;*/
+    font-size: 20px;
+    /*display: inline-block;*/
+}
