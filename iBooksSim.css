@@ -37,7 +37,7 @@ body {
 }
 
 #pageScrollBack {
-    /*background-color: #f08080;*/
+    background-color: #f08080;
     position: absolute;
     top: 568px;
     width: 1024px;
