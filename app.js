@@ -92,7 +92,8 @@ $(function () {
             if (currentIndex > 0) {
                 currentIndex -= 1;
                 e.preventDefault();
-                $('#pageScroll').animate({scrollLeft:chapterPoint[currentIndex]}, 300);
+//                $('#pageScroll').animate({scrollLeft:chapterPoint[currentIndex]}, 300);
+                $('#pageScroll')[0].scrollLeft = chapterPoint[currentIndex];
             }
         }
         $('#chapterScrollContent').css({
