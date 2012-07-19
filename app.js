@@ -91,7 +91,7 @@ $(function () {
                 '-webkit-transition-duration':'0.5s'
             });
         }
-//        return false;
+        return false;
     });
 
     $('#pageScroll').on('touchend', function (e) {
