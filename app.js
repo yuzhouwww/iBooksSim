@@ -13,30 +13,35 @@ $(function () {
         $('<div class="chapter"></div>').appendTo('#chapterScrollContent').html(chapter).css({
             left:chapter * 1024
         });
+        var pageScroll = $('<div class="pageScroll"></div>').appendTo('#pageScrollContainer').html(chapter).css({
+            left:chapter * 1024
+        });
+        var pageScrollContent = $('<div class="pageScrollContent"></div>').appendTo(pageScroll);
         for (var page = 0; page < chapters[chapter]; page++) {
-            var pageDiv = $('<div class="page"></div>').appendTo('#pageScrollContent').html((chapter + 1) + '-' + (page + 1)).css({
-                left:currentPoint + page * 200
+            var pageDiv = $('<div class="page"></div>').appendTo(pageScrollContent).html((chapter + 1) + '-' + (page + 1)).css({
+                left:page * 200
             });
             if (page != 0) {
                 pageDiv.css({
                     top:30,
+//                    width: 240,
                     height:150
                 });
             }
         }
 
-        chapterPoint.push(currentPoint);
-
-        if (chapters[chapter] < 6) {
-            $('<div class="blank"></div>').appendTo('#chapterScrollContent').css({
-                left:currentPoint + page * 200 + 200,
-                width:1024 - chapters[chapter] * 200
-            });
-            currentPoint += 1024;
-        }
-        else {
-            currentPoint += chapters[chapter] * 200;
-        }
+//        chapterPoint.push(currentPoint);
+//
+//        if (chapters[chapter] < 6) {
+//            $('<div class="blank"></div>').appendTo('#chapterScrollContent').css({
+//                left:currentPoint + page * 200 + 200,
+//                width:1024 - chapters[chapter] * 200
+//            });
+//            currentPoint += 1024;
+//        }
+//        else {
+//            currentPoint += chapters[chapter] * 200;
+//        }
     }
     var currentIndex = 0, touchBegin, touchLast, lastDistance, totalDistance;
     $('#chapterScroll').on('touchstart touchmove touchend', function (e) {
@@ -81,7 +86,10 @@ $(function () {
                 '-webkit-transition-duration':'0.5s'
             });
 
-            $('#pageScroll').animate({scrollLeft:chapterPoint[currentIndex]}, 300);
+            $('#pageScrollContainer').css({
+                '-webkit-transform':'translate3d(' + (-currentIndex) * 1024 + 'px,0,0)',
+                '-webkit-transition-duration':'0.5s'
+            });
         }
         return false;
     });
