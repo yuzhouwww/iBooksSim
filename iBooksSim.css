@@ -52,6 +52,7 @@ body {
 }
 
 .pageScroll {
+    background: #f08080;
     position: absolute;
     width: 1024px;
     overflow-x: scroll;
