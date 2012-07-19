@@ -53,6 +53,7 @@ body {
 }
 
 .pageScroll {
+    background: gray;
     position: absolute;
     width: 1024px;
     height: 180px;
