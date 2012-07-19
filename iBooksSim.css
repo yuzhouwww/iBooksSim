@@ -47,14 +47,15 @@ body {
 #pageScrollContainer {
     position: absolute;
     width: 1024px;
+    height: 180px;
     overflow: hidden;
     /*-webkit-transform: translate3d(0,0,0);*/
 }
 
 .pageScroll {
-    background: #f08080;
     position: absolute;
     width: 1024px;
+    height: 180px;
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
 }

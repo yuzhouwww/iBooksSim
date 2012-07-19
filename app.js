@@ -13,7 +13,7 @@ $(function () {
         $('<div class="chapter"></div>').appendTo('#chapterScrollContent').html(chapter).css({
             left:chapter * 1024
         });
-        var pageScroll = $('<div class="pageScroll"></div>').appendTo('#pageScrollContainer').html(chapter).css({
+        var pageScroll = $('<div class="pageScroll"></div>').appendTo('#pageScrollContainer').css({
             left:chapter * 1024
         });
         var pageScrollContent = $('<div class="pageScrollContent"></div>').appendTo(pageScroll);
