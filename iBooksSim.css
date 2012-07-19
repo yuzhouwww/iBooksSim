@@ -62,6 +62,7 @@ body {
 
 .pageScrollContent {
     position: absolute;
+    width: 1025px;
 }
 
 .page {
