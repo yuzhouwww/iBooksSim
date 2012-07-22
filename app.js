@@ -11,10 +11,10 @@ $(function () {
     var chapterPoint = [], currentPoint = 0;
     for (var chapter = 0; chapter < chapters.length; chapter++) {
         console.log(chapter+1+'页');
-        var chapter = $('<div class="chapter"></div>').appendTo('#chapterScrollContent').html(chapter+1).css({
+        var chapterDiv = $('<div class="chapter"></div>').appendTo('#chapterScrollContent').html(chapter+1).css({
             left:chapter * 1024
         });
-        var pageScroll = $('<div class="pageScroll"></div>').appendTo(chapter);
+        var pageScroll = $('<div class="pageScroll"></div>').appendTo(chapterDiv);
         for (var page = 0; page < chapters[chapter]; page++) {
             var pageDiv = $('<div class="page"></div>').appendTo(pageScroll).html((chapter + 1) + '-' + (page + 1)).css({
                 left:page * 200
