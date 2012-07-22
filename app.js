@@ -14,7 +14,10 @@ $(function () {
         var chapterDiv = $('<div class="chapter"></div>').appendTo('#chapterScrollContent').html(chapter+1).css({
             left:chapter * 1024
         });
+
         var pageScroll = $('<div class="pageScroll"></div>').appendTo(chapterDiv);
+        $('<div class="pageScrollBlank"></div>').appendTo(pageScroll);
+
         for (var page = 0; page < chapters[chapter]; page++) {
             var pageDiv = $('<div class="page"></div>').appendTo(pageScroll).html((chapter + 1) + '-' + (page + 1)).css({
                 left:page * 200
@@ -26,10 +29,15 @@ $(function () {
                     height:150
                 });
             }
+
         }
     }
     var currentIndex = 0, touchBegin, touchLast, lastDistance, totalDistance;
+    var pageScrolling;
     $('#chapterScroll').on('touchstart touchmove touchend', function (e) {
+        if(pageScrolling){
+            return;
+        }
         if (e.type == 'touchstart') {
             touchBegin = touchLast = {
                 x:e.originalEvent.touches[0].clientX,
@@ -76,22 +84,21 @@ $(function () {
                 '-webkit-transition-duration':'0.5s'
             });
         }
-        return false;
+//        return false;
     });
 
-    $('#pageScroll').on('touchend', function (e) {
+    console.log('length'+$('.pageScroll').length);
+    $('.pageScroll').on('touchstart touchmove touchend', function (e) {
         console.log(this.scrollLeft);
-        if (this.scrollLeft < chapterPoint[currentIndex]) {
-            if (currentIndex > 0) {
-                currentIndex -= 1;
-                e.preventDefault();
-//                $('#pageScroll').animate({scrollLeft:chapterPoint[currentIndex]}, 300);
-                $('#pageScroll')[0].scrollLeft = chapterPoint[currentIndex];
-            }
+        if(e.type == 'touchstart'){
+            pageScrolling = true;
         }
-        $('#chapterScrollContent').css({
-            '-webkit-transform':'translate3d(' + (-currentIndex) * 1024 + 'px,0,0)',
-            '-webkit-transition-duration':'0.5s'
-        });
+        else if(e.type == 'touchmove'){
+
+        }
+        else if(e.type == 'touchend'){
+            pageScrolling = false;
+        }
     });
+
 });

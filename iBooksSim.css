@@ -30,13 +30,19 @@ body {
 }
 
 .pageScroll {
-    background: gray;
+    /*background: gray;*/
     position: absolute;
     top: 568px;
     width: 1024px;
     height: 180px;
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
+}
+
+.pageScrollBlank {
+    position: absolute;
+    width: 1025px;
+    height: 180px;
 }
 
 .page {
