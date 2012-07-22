@@ -10,7 +10,7 @@ $(function () {
     var chapters = [5, 3, 7, 4, 8];
     var chapterPoint = [], currentPoint = 0;
     for (var chapter = 0; chapter < chapters.length; chapter++) {
-        $('<div class="chapter"></div>').appendTo('#chapterScrollContent').html(chapter).css({
+        $('<div class="chapter"></div>').appendTo('#chapterScrollContent').html(chapter+1).css({
             left:chapter * 1024
         });
         var pageScroll = $('<div class="pageScroll"></div>').appendTo('#pageScrollContainer').css({
