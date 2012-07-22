@@ -10,15 +10,12 @@ $(function () {
     var chapters = [5, 3, 7, 4, 8];
     var chapterPoint = [], currentPoint = 0;
     for (var chapter = 0; chapter < chapters.length; chapter++) {
-        $('<div class="chapter"></div>').appendTo('#chapterScrollContent').html(chapter+1).css({
+        var chapter = $('<div class="chapter"></div>').appendTo('#chapterScrollContent').html(chapter+1).css({
             left:chapter * 1024
         });
-        var pageScroll = $('<div class="pageScroll"></div>').appendTo('#pageScrollContainer').css({
-            left:chapter * 1024
-        });
-        var pageScrollContent = $('<div class="pageScrollContent"></div>').appendTo(pageScroll);
+        var pageScroll = $('<div class="pageScroll"></div>').appendTo(chapter);
         for (var page = 0; page < chapters[chapter]; page++) {
-            var pageDiv = $('<div class="page"></div>').appendTo(pageScrollContent).html((chapter + 1) + '-' + (page + 1)).css({
+            var pageDiv = $('<div class="page"></div>').appendTo(pageScroll).html((chapter + 1) + '-' + (page + 1)).css({
                 left:page * 200
             });
             if (page != 0) {
@@ -29,19 +26,6 @@ $(function () {
                 });
             }
         }
-
-//        chapterPoint.push(currentPoint);
-//
-//        if (chapters[chapter] < 6) {
-//            $('<div class="blank"></div>').appendTo('#chapterScrollContent').css({
-//                left:currentPoint + page * 200 + 200,
-//                width:1024 - chapters[chapter] * 200
-//            });
-//            currentPoint += 1024;
-//        }
-//        else {
-//            currentPoint += chapters[chapter] * 200;
-//        }
     }
     var currentIndex = 0, touchBegin, touchLast, lastDistance, totalDistance;
     $('#chapterScroll').on('touchstart touchmove touchend', function (e) {

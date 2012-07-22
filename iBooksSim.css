@@ -18,13 +18,6 @@ body {
     -webkit-transform: translate3d(0,0,0);
 }
 
-#hhh {
-    background: #20b2aa;
-    position: absolute;
-    width: 500px;
-    height: 100px;
-}
-
 .chapter {
     background-color: white;
     background-image: url(background.jpeg);
@@ -55,19 +48,15 @@ body {
 .pageScroll {
     background: gray;
     position: absolute;
+    top: 568px;
     width: 1024px;
     height: 180px;
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
 }
 
-.pageScrollContent {
-    position: absolute;
-    width: 1025px;
-}
-
 .page {
-    background-color: gray;
+    background-color: #add8e6;
     background-image: url(background.jpeg);
     background-size: cover;
     position: absolute;
