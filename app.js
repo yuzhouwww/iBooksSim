@@ -78,11 +78,6 @@ $(function () {
                 '-webkit-transform':'translate3d(' + (-currentIndex) * 1024 + 'px,0,0)',
                 '-webkit-transition-duration':'0.5s'
             });
-
-            $('#pageScrollContainer').css({
-                '-webkit-transform':'translate3d(' + (-currentIndex) * 1024 + 'px,0,0)',
-                '-webkit-transition-duration':'0.5s'
-            });
         }
 //        return false;
     });
